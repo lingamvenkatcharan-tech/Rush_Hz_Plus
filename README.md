@@ -228,7 +228,7 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 | 이름 | 역할 | 주요 기여 내용 |
 |------|------|----------------|
 | **방석영** | 리드 개발자 / 시스템 아키텍트 | - 전체 시스템 아키텍처 설계<br>- 데이터 수집/가공 (UrbanSound8K, DCASE, FSDKaggle2019)<br>- YAMNet 모델 파이프라인 (전처리, 학습, TFLite 변환)<br>- AudioMonitorService (오디오 캡처, TFLite 추론) 구현<br>- 기능과 서비스 간 전체 통합 및 연결<br>- 테스트 및 QA, 문서화 |
-| **김예람** | DB 및 빌드 엔지니어 | - build.gradle 의존성 정리<br>- Hilt 의존성 주입 및 Firebase RTDB 연동<br>- 동기화 충돌 해결 로직 구현 |
+| **김예람** | DB 및 빌드 엔지니어 | - build.gradle 의존성 정리<br>- Hilt 의존성 주입 및 Firebase RTDB 연동<br> - Room DB 스키마 설계 및 쿼리 구현<br>- 동기화 충돌 해결 로직 구현 |
 | **이은빈** | 알림 기능 담당 | - 진동, 플래시, SMS 전송 등 알림 트리거 구현<br>- 감지된 소리 라벨 → 이모지 변환 시각적 알림 구현<br>- L3 긴급 알림 풀스크린 액티비티 구현<br>- 발표 자료 슬라이드 정리 |
 | **정아인** | UI/UX 디자이너 | - 앱 아이콘 및 그래픽 에셋 제작<br>- XML 레이아웃 작성 및 수정<br>- 컴포넌트 재사용 구조화<br>- UI 상태 관리 구현<br>- 사용자 매뉴얼 제작<br>- 발표 자료 슬라이드 정리 |
   
