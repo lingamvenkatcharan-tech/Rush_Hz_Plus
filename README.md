@@ -231,6 +231,30 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 | **김예람** | 데이터 계층 / 인프라 담당 | - Room 기반 로컬 데이터 계층 설계 및 쿼리 최적화<br>- Firebase RTDB 연동 및 실시간 데이터 동기화 구조 구현<br>- 오프라인-온라인 간 데이터 충돌 해결 로직 설계<br>- DI(Hilt) 기반 모듈 의존성 관리 및 빌드 안정성 개선 |
 | **이은빈** | 이벤트 처리 / 알림 시스템 담당 | - 소리 감지 이벤트 기반 알림 처리 파이프라인 설계 및 구현<br>- 긴급 상황 대응을 위한 L3 알림 UX 및 Fullscreen Activity 구현<br>- 진동, 플래시, SMS 등 멀티 채널 알림 통합 처리<br>- 감지된 소리 라벨을 이모지로 변환하는 시각적 알림 기능 구현 |
 | **정아인** | UI/UX 및 프레젠테이션 레이어 담당 | - 사용자 중심 UI/UX 설계 및 화면 구조 정의<br>- ViewModel 기반 상태 관리 및 UI 반응 구조 구현 (LiveData/Flow)<br>- 컴포넌트 재사용 구조 설계 및 UI 일관성 확보<br>- 사용성 테스트 및 시각적 피드백 개선 |
+
+### Collaboration Structure
+
+The system is structured as a real-time audio event processing pipeline, with each member responsible for a specific layer:
+
+1. **Audio Processing Layer (방석영)**
+   - Captures audio input and performs real-time inference using YAMNet (TFLite)
+   - Generates sound detection events
+   - Detection events are delivered to the Notification and Data layers via defined interfaces
+
+2. **Event Handling & Notification Layer (이은빈)**
+   - Receives detection events and triggers multi-channel alerts (vibration, flash, SMS)
+   - Handles emergency-level (L3) alert UI
+
+3. **Data Layer (김예람)**
+   - Persists detection events using Room DB
+   - Synchronizes data with Firebase RTDB
+   - Provides stored data to the Presentation layer
+   - Handles offline-online consistency
+
+4. **Presentation Layer (정아인)**
+   - Observes detection data and system state from the Data layer
+   - Renders UI based on ViewModel (LiveData/Flow)
+   - Displays real-time detection results and history
   
 ---
 
