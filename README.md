@@ -220,7 +220,6 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 ## 📄 라이선스
 
 본 프로젝트는 **GPL-3.0 license**를 따릅니다.  
-자세한 내용은 [LICENSE](LICENSE) 파일을 참고하세요.
 
 ---
 
@@ -238,7 +237,7 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 ## 📚 참고 자료
 
 - [YAMNet: TensorFlow Hub](https://tfhub.dev/google/yamnet/1)
-- [Android Foreground Service 정책](https://developer.android.com/about/versions/14/background-tasks)
+- [Android Foreground Service 정책](https://developer.android.com/about/versions/14/changes/fgs-types-required)
 - [DCASE 2020 Challenge Task 4](http://dcase.community/challenge2020/task-sound-event-detection-and-separation-in-domestic-environments)
 - [UrbanSound8K Dataset](https://urbansounddataset.weebly.com/)
 
