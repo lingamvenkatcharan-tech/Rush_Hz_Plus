@@ -234,29 +234,33 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 
 ### Collaboration Structure
 
-The system is structured as a real-time audio event processing pipeline, with each member responsible for a specific layer.
+The system follows a real-time, event-driven pipeline architecture.  
+The overall system design, including architecture, event flow, and core inference logic, was led and implemented by the lead developer, while each layer was implemented by contributors based on clearly defined interfaces and responsibilities.
 
 1. **Audio Processing Layer (방석영)**
+   - Designed and implemented the end-to-end audio processing pipeline
    - Captures audio input and performs real-time inference using YAMNet (TFLite)
-   - Generates sound detection events
-   - Defines the event structure and delivers detection results to downstream layers
-   - Detection events are consumed by both the Notification and Data layers for real-time alerts and persistence
+   - Defines the detection event schema and overall data flow
+   - Publishes detection events to downstream layers
 
 2. **Event Handling & Notification Layer (이은빈)**
-   - Receives detection events and triggers multi-channel alerts (vibration, flash, SMS)
-   - Handles emergency-level (L3) alert UI
-   - Implements alert logic based on the defined event structure
+   - Implements alert handling logic based on the defined event schema
+   - Subscribes to detection events and triggers multi-channel alerts (vibration, flash, SMS)
+   - Handles emergency-level (L3) alert UI and interaction flow
 
 3. **Data Layer (김예람)**
-   - Persists detection events using Room DB
-   - Synchronizes data with Firebase RTDB
-   - Provides stored data to the Presentation layer
-   - Handles offline-online consistency
+   - Implements local persistence using Room DB
+   - Handles synchronization with Firebase RTDB
+   - Ensures offline-first consistency based on the defined data flow
 
 4. **Presentation Layer (정아인)**
-   - Observes detection data and system state from the Data layer
-   - Renders UI based on ViewModel (LiveData/Flow)
-   - Displays real-time detection results and history
+   - Implements UI components and interaction logic
+   - Observes system state via ViewModel (LiveData/Flow)
+   - Renders real-time detection results and history
+
+- A shared detection event contract (schema) is used across all layers to ensure consistency and decoupling.
+- The system follows a publish–subscribe pattern, allowing multiple layers to react to the same event independently.
+- Each layer is designed to be independently testable, enabling parallel development while maintaining architectural integrity.
   
 ---
 
